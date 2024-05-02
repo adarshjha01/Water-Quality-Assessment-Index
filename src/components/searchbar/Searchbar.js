@@ -4,9 +4,21 @@ import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { NavLink,useNavigate  } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
+// import e from "express";
+import { set } from "firebase/database";
 
 const SearchBar = ({ user ,setUser, setLoader}) => {
   const [term, setTerm] = useState("");
+  const [input, setInput] = useState("");
+
+  const fetchData =(value)=> {
+    fetch('https://jsonplaceholder.typicode.com/users').then();
+  };
+
+  const handleChange = (value) => {
+    setInput(value);
+    fetchData(value)
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -38,7 +50,8 @@ const SearchBar = ({ user ,setUser, setLoader}) => {
           <img src="./logo.png" style={{ height: "4rem", width: "7rem" }} />
         </Link>
         <div className="searchbarInput">
-          <input type="text" placeholder="Search River" required />
+          <input type="text" placeholder="Search River" value={input} onChange={(e) => handleChange(e.target.value)}/>
+          
           <CiLocationOn className="icon" />
         </div>
         <button type="submit">
