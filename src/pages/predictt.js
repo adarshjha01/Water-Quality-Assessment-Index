@@ -52,7 +52,7 @@ const Predictt = () => {
           WQI Calulator
         </h1>
         <div className="input-field">
-          <label htmlFor="conductivity">Conductivity:</label>
+          <label htmlFor="conductivity">Conductivity (μS/cm):</label>
           <input
             type="number"
             id="conductivity"
@@ -63,7 +63,7 @@ const Predictt = () => {
           />
         </div>
         <div className="input-field">
-          <label htmlFor="nitrate">Nitrate:</label>
+          <label htmlFor="nitrate">Nitrate (mg/l):</label>
           <input
             type="number"
             id="nitrate"
@@ -74,7 +74,7 @@ const Predictt = () => {
           />
         </div>
         <div className="input-field">
-          <label htmlFor="temperature">Temperature:</label>
+          <label htmlFor="temperature">Temperature (°C):</label>
           <input
             type="number"
             id="temperature"
@@ -85,7 +85,7 @@ const Predictt = () => {
           />
         </div>
         <div className="input-field">
-          <label htmlFor="turbidity">Turbidity:</label>
+          <label htmlFor="turbidity">Turbidity (NTU):</label>
           <input
             type="number"
             id="turbidity"

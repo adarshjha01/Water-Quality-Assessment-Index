@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './Tracker.css';
 
-const Tracker = () => {
+const WQI = () => {
   const [data, setData] = useState([]);
   const [intervalType, setIntervalType] = useState('month'); // Default to day-wise
 
@@ -118,8 +118,8 @@ const Tracker = () => {
       </div>
       <div className='graph'>
           <LineChart width={700} height={500} data={filterDataByInterval(intervalType)} >
-            <XAxis dataKey="timestamp" tickFormatter={(timestamp) => intervalType === 'hour' ? timestamp.slice(5, 16) : timestamp} /> {/* Adjust X-axis label format */}
-            <YAxis />
+          <XAxis dataKey="timestamp" tickFormatter={(timestamp) => intervalType === 'hour' ? timestamp.slice(5, 16) : timestamp} label={{ value: 'Timestamp', position: 'insideBottomLeft', offset: -12 }} />
+        <YAxis label={{ value: 'WQI', angle: -90, position: 'insideLeft' }} />
             <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
             <Tooltip />
             <Legend />
@@ -130,4 +130,4 @@ const Tracker = () => {
   );
 };
 
-export default Tracker;
+export default WQI;

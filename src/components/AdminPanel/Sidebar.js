@@ -68,7 +68,7 @@
 import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 import Dashboard from "./pages/Dashboard";
-import Tracker from "./pages/Tracker";
+import WQI from "./pages/Tracker";
 import { FaBars, FaTachometerAlt, FaChartLine, FaFlask, FaThermometerHalf, } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { RxDashboard } from "react-icons/rx";
@@ -86,10 +86,6 @@ const Sidebar = ({ handleTabChange, activeTab }) => {
       icon: <RxDashboard />,
     },
     {
-      tab: "Tracker",
-      icon: <FaChartLine />,
-    },
-    {
       tab: "Conductivity",
       icon: <GiElectric />,
     },
@@ -105,6 +101,10 @@ const Sidebar = ({ handleTabChange, activeTab }) => {
       tab: "Turbidity",
       icon: <FaGlassWater />,
     },
+    {
+      tab: "WQI",
+      icon: <FaChartLine />,
+    }
   ];
 
   return (

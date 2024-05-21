@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./LoginForm.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+
+
 import { auth } from "./config";
 import { Admin } from "../components/AdminPanel";
 
@@ -10,7 +12,12 @@ const Login = ({setUser, user}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+//updadted
+  const [resetEmail, setResetEmail] = useState("");
+  const [resetPasswordSent, setResetPasswordSent] = useState(false);
+
   const navigate = useNavigate();
+
   if(user) {
     return <Navigate to='/admin' />
   }
@@ -24,9 +31,23 @@ const Login = ({setUser, user}) => {
       setUser(user)
       navigate("/Admin");
     } catch (err) {
-      console.log(err)
+      alert("Invalid Password")
     }
   };
+
+  //updated
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+
+    try {
+      await sendPasswordResetEmail(auth, resetEmail);
+      setResetPasswordSent(true);
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send reset email. Please try again.");
+    }
+  };
+
 
   return (
     <div className="background">
@@ -64,7 +85,7 @@ const Login = ({setUser, user}) => {
             </label>
             <a href="#">Forgot Password ?</a>
           </div>
-          <button type="submit" onClick={loginUser }>
+          <button type="submit" onClick={loginUser}>
             {" "}
             Sign In{" "}
           </button>
@@ -79,6 +100,42 @@ const Login = ({setUser, user}) => {
         </form>
       </div>
     </div>
+    // <div className="remember-forgot">
+    //         <label>
+    //           <input type="checkbox" />
+    //           Remember me{" "}
+    //         </label>
+    //         <a href="#" onClick={() => setResetPasswordSent(true)}>Forgot Password ?</a>
+    //       </div>
+    //       {!resetPasswordSent ? (
+    //         <button type="submit" onClick={loginUser}>
+    //           {" "}
+    //           Sign In{" "}
+    //         </button>
+    //       ) : (
+    //         alert("Password reset instructions sent to your email.")
+    //       )}
+    //       {!resetPasswordSent && (
+    //         <div className="register-link">
+    //           <p>
+    //             Don't have an account?{" "}
+    //             <Link to="/signup" className="ms-2">
+    //               Sign up
+    //             </Link>
+    //           </p>
+    //         </div>
+    //       )}
+    //       {resetPasswordSent && (
+    //         <div className="register-link">
+    //           <p>
+    //             Remember your password?{" "}
+    //             <a href="#" onClick={() => setResetPasswordSent(false)}>Sign in</a>
+    //           </p>
+    //         </div>
+    //       )}
+    //     </form>
+    //   </div>
+    // </div>
   );
 };
 export default Login;

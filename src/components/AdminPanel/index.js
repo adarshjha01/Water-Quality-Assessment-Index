@@ -8,7 +8,7 @@ import { useState } from "react";
 import "./images/dashboard.png";
 import Sidebar from "./Sidebar";
 import Dashboard from "./pages/Dashboard";
-import Tracker from "./pages/Tracker";
+import WQI from "./pages/Tracker";
 import Conductivity from "./pages/Conductivity";
 import Temperature from "./pages/Temperature";
 import Nitrate from "./pages/Nitrate";
@@ -53,7 +53,7 @@ export const Admin = ({setUser, setLoader}) => {
         {activeTab === "Turbidity" && <Turbidity />}
         {activeTab === "Nitrate" && <Nitrate />}
         {activeTab === "Conductivity" && <Conductivity />}
-        {activeTab === "Tracker" && <Tracker />}
+        {activeTab === "WQI" && <WQI />}
         {activeTab === "Temperature" && <Temperature />}
       </div>
       {/* <img src="./images/dashboard.png"/> */}

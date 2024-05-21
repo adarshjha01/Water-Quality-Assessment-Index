@@ -119,8 +119,8 @@ const Conductivity = () => {
       </div>
       <div className='graph'>
       <LineChart width={700} height={500} data={filterDataByInterval(intervalType)}>
-        <XAxis dataKey="timestamp" tickFormatter={(timestamp) => intervalType === 'hour' ? timestamp.slice(5, 16) : timestamp} /> {/* Adjust X-axis label format */}
-        <YAxis />
+      <XAxis dataKey="timestamp" tickFormatter={(timestamp) => intervalType === 'hour' ? timestamp.slice(5, 16) : timestamp} label={{ value: 'Timestamp', position: 'insideBottomLeft', offset: -12 }} />
+      <YAxis label={{ value: '(μS/cm)', angle: -90, position: 'insideLeft' }} />
         <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
         <Tooltip />
         <Legend />

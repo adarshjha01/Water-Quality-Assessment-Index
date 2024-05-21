@@ -1,8 +1,11 @@
 import './Dashboard.css';
-import '../../DashboardMap/card.css';
-import React, { useState, useEffect } from 'react';
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
+import React, { useState, useEffect,Fragment } from 'react';
 import { CgEnter } from 'react-icons/cg';
 import { CiLocationOn } from "react-icons/ci";
+// import L from 'leaflet';
+// import Card from '../../DashboardMap/card';
+// import '../../DashboardMap/style.css';
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
@@ -37,7 +40,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className='parent'>
+
     <div className="card">
       <div className="header">
         <h2>
@@ -91,7 +94,23 @@ const Dashboard = () => {
         <p>Last updated: 11 mins ago</p>
       </div>
     </div>
-    </div>
+  // const [position, setPosition] = useState(null);
+	// return (
+	// 	<Fragment>
+	// 		<MapContainer
+	// 			center={[29.9695, 76.8783]}
+	// 			zoom={13}
+	// 			scrollWheelZoom={false}
+	// 			minZoom={2}
+	// 			maxZoom={18}
+	// 		>
+	// 			<TileLayer
+	// 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	// 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+	// 			/>
+  //      			 <Card />
+	// 			</MapContainer>
+	// 			</Fragment>
   );
 };
 
