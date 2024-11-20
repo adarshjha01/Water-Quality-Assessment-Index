@@ -40,6 +40,34 @@ const Dashboard = () => {
   }, []);
 
   return (
+    <div className="dashboard-container">
+      {/* Left card for "Welcome to WQI" */}
+      <div className="welcome-card">
+        <h1>
+          Welcome to <span>WQI</span>
+        </h1>
+        <p>Track and analyze water quality effortlessly!</p>
+        <p>
+        <ul>
+          <li>
+          Monitor the Water Quality Index (WQI) in real-time.
+
+          </li>
+          <li>
+          Access key parameters like Nitrate, Turbidity, and Conductivity.
+
+          </li>
+          <li>
+          Stay updated with last-refreshed data timestamps.
+          
+          </li>
+          <li>
+          Designed to ensure you make informed decisions about water safety.
+          </li>
+
+        </ul>
+        </p>
+      </div>
 
     <div className="card">
       <div className="header">
@@ -93,6 +121,7 @@ const Dashboard = () => {
       <div className="footerClass">
         <p>Last updated: 11 mins ago</p>
       </div>
+    </div>
     </div>
   // const [position, setPosition] = useState(null);
 	// return (

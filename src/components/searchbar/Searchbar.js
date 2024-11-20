@@ -92,7 +92,7 @@ const [showList, setShowList] = useState(true);
           <div style={{ backgroundColor: '#eee', }}>
 
             {
-             showList && items.length > 0 && items.map((item)=> (<div onClick={()=>handleItem(item)} style={{marginTop: '9px'}}>{item.label}</div>))
+             showList && items.length > 0 && items.map((item)=> (<div onClick={()=>handleItem(item)} style={{marginTop: '9px', }}>{item.label}</div>))
             }
           </div>
           

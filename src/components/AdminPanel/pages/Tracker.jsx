@@ -116,6 +116,16 @@ const WQI = () => {
         <label htmlFor="year">Year</label>
 
       </div>
+      {/* WQI Ranges Component */}
+      <div className="wqi-ranges">
+        <div><strong>WQI Ranges:</strong></div>
+        <div><span style={{ color: 'blue' }}>0 - 25:</span> Excellent</div>
+        <div><span style={{ color: 'blue' }}>25 - 50:</span> Good</div>
+        <div><span style={{ color: 'blue' }}>50 - 75:</span> Poor</div>
+        <div><span style={{ color: 'blue' }}>75 - 100:</span> Very Poor</div>
+        <div><span style={{ color: 'blue' }}>100:</span> Severe</div>
+      </div>
+
       <div className='graph'>
           <LineChart width={700} height={500} data={filterDataByInterval(intervalType)} >
           <XAxis dataKey="timestamp" tickFormatter={(timestamp) => intervalType === 'hour' ? timestamp.slice(5, 16) : timestamp} label={{ value: 'Timestamp', position: 'insideBottomLeft', offset: -12 }} />

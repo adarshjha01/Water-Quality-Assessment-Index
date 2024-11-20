@@ -116,6 +116,12 @@ const Nitrate = () => {
         <label htmlFor="year">Year</label>
         
       </div>
+      <div className="wqi-ranges">
+        <div><strong>Standard Scale:</strong></div>
+        <div>50 mg/L</div>
+        
+      </div>
+      
       <div className='graph'>
       <LineChart width={700} height={500} data={filterDataByInterval(intervalType)}>
       <XAxis dataKey="timestamp" tickFormatter={(timestamp) => intervalType === 'hour' ? timestamp.slice(5, 16) : timestamp} label={{ value: 'Timestamp', position: 'insideBottomLeft', offset: -12 }} />

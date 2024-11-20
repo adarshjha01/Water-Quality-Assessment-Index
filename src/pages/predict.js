@@ -38,7 +38,7 @@ const Predict = () => {
     }
     
     try {
-      const response = await axios.post('/predict', {
+      const response = await axios.post('/predict', { // model connection
         Conductivity: conductivity,
         NO3: nitrate,
         Temp: temperature,
@@ -112,13 +112,19 @@ const Predict = () => {
           />
         </div>
         <div className="output">
-          {wqi && <strong>WQI:</strong>} {wqi} <br />
-          {qualityMessage && <strong>Water Quality:</strong>} {qualityMessage}
+          {isLoading ? (
+            <div className="spinner"></div> // Spinner shown during loading
+          ) : (
+            <>
+              <strong>WQI:</strong> {wqi}
+              <br />
+              <strong>Water Quality:</strong> {qualityMessage}
+            </>
+          )}
         </div>
         <button onClick={calculateWQI}>Predict</button>
       </div>
     </div>
   );
 };
-
 export default Predict;

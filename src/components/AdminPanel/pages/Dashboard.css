@@ -4,6 +4,39 @@
   border: 2px solid black;
   height: 100%;
 } */
+
+.welcome-card {
+ 
+  width: 500px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(107, 105, 105, 0.1);
+  position: left;
+  top: 30%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.welcome-card h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.welcome-card span {
+  color: #84d9f0;
+  font-style: italic;
+  text-align: center;
+}
+
+.welcome-card p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
 .card {
   width: 250px;
   border: 1px solid #ddd;
