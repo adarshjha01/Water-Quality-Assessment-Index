@@ -1,18 +1,23 @@
-.search {
+/* .search {
   display: flex;
   justify-content: space-between;
+  padding-top: 1rem;
 }
+
 .search img {
   display: flex;
   margin-left: 15px;
 }
+
 .searchbarInput {
   display: flex;
   align-items: center;
+  width: 30%;
 }
+
 .searchbarInput input {
-  width: 400px;
-  height: 20%;
+  width: 100%;
+  height: 40px;
   background: whitesmoke;
   border: 2px solid rgba(18, 17, 17, 0.2);
   outline: none;
@@ -21,6 +26,7 @@
   color: black;
   padding: 20px 45px 20px 20px;
 }
+
 .search input::placeholder {
   color: black;
 }
@@ -35,7 +41,7 @@
 }
 
 .search button {
-  width: 7%;
+  width: 120px;
   height: 45px;
   background: rgb(0, 170, 255);
   border: none;
@@ -49,5 +55,233 @@
   font-weight: 700;
   float: right;
   margin-right: 15px;
-  margin-top: 8px;
+  margin-top: 0px;
+}
+
+@media (max-width: 1024px) {
+  .searchbarInput {
+    width: 80%;
+  }
+
+  .searchbarInput input {
+    font-size: 14px;
+    padding: 15px 40px 15px 15px;
+  }
+
+  .search button {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchbarInput {
+    width: 70%;
+  }
+
+  .searchbarInput input {
+    font-size: 13px;
+    padding: 10px 35px 10px 15px;
+  }
+
+  .search button {
+    width: 90px;
+    height: 35px;
+    font-size: 13px;
+  }
+
+  .search img {
+    margin-left: 10px;
+    height: 3rem;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searchbarInput {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .searchbarInput input {
+    font-size: 12px;
+    padding: 8px 30px 8px 10px;
+  }
+
+  .search button {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .search img {
+    margin-left: 0;
+    height: 3rem;
+    width: 5rem;
+  }
+} */
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  position: relative;
+}
+
+.search img {
+  display: flex;
+  margin-left: 15px;
+}
+
+.searchbarInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* For dropdown positioning */
+  width: 35%;
+}
+
+.searchbarInput input {
+  width: 100%;
+  height: 40px;
+  background: whitesmoke;
+  border: 2px solid rgba(18, 17, 17, 0.2);
+  outline: none;
+  border-radius: 30px;
+  font-size: 16px;
+  color: black;
+  padding: 20px 45px 20px 20px;
+}
+
+.search input::placeholder {
+  color: black;
+}
+
+.search .icon {
+  display: flex;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-10%);
+  transform: translateX(-190%);
+  font-size: 20px;
+}
+
+.search button {
+  width: 120px;
+  height: 45px;
+  background: rgb(0, 170, 255);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  text-decoration: wavy;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  margin-right: 15px;
+  margin-top: 0px;
+}
+
+/* Dropdown Menu Styling */
+.searchbarInput .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 5px;
+}
+
+.searchbarInput .dropdown div {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.searchbarInput .dropdown div:hover {
+  background-color: #f1f1f1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .searchbarInput {
+    width: 30%;
+  }
+
+  .searchbarInput input {
+    font-size: 14px;
+    padding: 15px 40px 15px 15px;
+  }
+
+  .search button {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchbarInput {
+    width: 30%;
+  }
+
+  .searchbarInput input {
+    font-size: 13px;
+    padding: 10px 35px 10px 15px;
+  }
+
+  .search button {
+    width: 90px;
+    height: 35px;
+    font-size: 13px;
+  }
+
+  .search img {
+    margin-left: 10px;
+    height: 3rem;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searchbarInput {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+
+  .searchbarInput input {
+    font-size: 12px;
+    padding: 8px 30px 8px 10px;
+  }
+
+  .search button {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .search img {
+    margin-left: 0;
+    height: 3rem;
+    width: 5rem;
+  }
 }

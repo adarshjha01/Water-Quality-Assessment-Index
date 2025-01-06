@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-export const SearchList = ({item}) => {
-    console.log(item)
+export const SearchList = ({ item }) => {
   return (
-    <div style={{zIndex: 1500}}>
-      <p> {item.label}</p>
+    <div style={{ zIndex: 1500 }}>
+      <p>{item.label}</p>
     </div>
-  )
-}
+  );
+};

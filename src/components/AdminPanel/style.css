@@ -1,7 +1,7 @@
-.AdminPage {
+/* .AdminPage {
   background: url("./images/background.png");
-  display: flex; /* Enable grid layout for the background */
-  height: 100vh; /* Make the background fill the viewport height */
+  display: flex; /
+  height: 100vh; 
   background-size: cover;
   align-items: center;
   justify-content: space-between;
@@ -29,4 +29,82 @@
   float: right;
   margin-right: 15px;
   margin-top: -730px;
+} */
+/* Main Container Styles */
+.AdminPage {
+  background: url("./images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Enables absolute positioning for child elements */
+}
+
+/* Logout Button Styling */
+.AdminPage button {
+  position: absolute; /* Independent positioning */
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  width: 120px; /* Adjusted width for better appearance */
+  height: 45px;
+  background: rgb(0, 170, 255);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: whitesmoke;
+  width: 100%; /* Full width for responsiveness */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0; /* Remove negative margins */
+  padding: 10px 20px; /* Add padding for spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .AdminPage {
+    flex-direction: column; /* Stack elements vertically */
+    height: auto; /* Adjust height dynamically */
+    padding: 20px;
+  }
+
+  .AdminPage button {
+    top: 10px; /* Adjust spacing */
+    right: 10px;
+    width: 100px; /* Slightly smaller button width */
+    height: 40px;
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .navbar {
+    flex-direction: column; /* Stack navbar items */
+    align-items: center; /* Center items */
+    width: 100%; /* Full width */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .AdminPage button {
+    top: 5px;
+    right: 5px;
+    width: 90px; /* Reduce button size further */
+    height: 35px;
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .navbar {
+    padding: 5px; /* Less padding for smaller screens */
+  }
 }

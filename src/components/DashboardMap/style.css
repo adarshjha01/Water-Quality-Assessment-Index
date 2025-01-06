@@ -1,4 +1,4 @@
-@import url("~leaflet/dist/leaflet.css");
+/* @import url("~leaflet/dist/leaflet.css");
 
 .leaflet-container {
 	display: flex;
@@ -60,4 +60,111 @@
 
 .homePage .leaflet-popup-close-button {
 	display: none;
+} */
+
+@import url("~leaflet/dist/leaflet.css");
+
+.leaflet-container {
+  display: flex;
+  width: 99.72%;
+  height: 100vh;
+  border: 2px solid black;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(300px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: black;
+  border-radius: 5px;
+}
+
+/* Modal map adjustments */
+.modalMap .leaflet-container {
+  position: absolute;
+  width: 70vw;
+  height: 60vh;
+  max-width: 42rem;
+  max-height: 40rem;
+  border-radius: 8px;
+}
+
+.modalMap .leaflet-control-container .leaflet-control-zoom {
+  display: none;
+}
+
+.leaflet-control-container .leaflet-control-zoom {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.leaflet-control-zoom {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-marker-draggable {
+  display: none;
+}
+
+.leaflet-top.leaflet-right {
+  display: none;
+}
+
+.previousBookingPage .leaflet-popup-content {
+  margin: 1rem;
+}
+
+.previousBookingPage .leaflet-popup-close-button {
+  display: none;
+}
+
+.homePage .leaflet-popup-close-button {
+  display: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .leaflet-container {
+    height: 60vh;
+  }
+
+  .modalMap .leaflet-container {
+    width: 80vw;
+    height: 55vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .leaflet-container {
+    height: 50vh;
+  }
+
+  .modalMap .leaflet-container {
+    width: 90vw;
+    height: 45vh;
+  }
+
+  .leaflet-control-zoom {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leaflet-container {
+    height: 40vh;
+  }
+
+  .modalMap .leaflet-container {
+    width: 100vw;
+    height: 40vh;
+  }
+
+  .leaflet-control-zoom {
+    font-size: 10px;
+    right: 0.5rem;
+  }
 }

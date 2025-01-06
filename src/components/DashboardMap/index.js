@@ -42,14 +42,8 @@ const DashboardMap = ({searchLocationCoordinates}) => {
 
 const SearchLocationMark = ({ latitude, longitude }) => {
 
-	// const coordinates = {
-	// 	latitude: 29.9695,
-	// 	longitude: 76.8783
-	// }
 console.log(latitude, longitude)
-	// const coordinates = searchLocationCoordinates.coordinates;
-
-	// States
+	
 	const map = useMap();
 	const markerRef = useRef(null);
 	const markerIcon = new L.icon({
@@ -66,7 +60,7 @@ console.log(latitude, longitude)
 	}, [map, latitude, longitude]);
 
 	if (latitude !== undefined && longitude !== undefined) {
-		return null; // Handle case when coordinates are undefined
+		return null; 
 	}
 	return (
 		<Marker

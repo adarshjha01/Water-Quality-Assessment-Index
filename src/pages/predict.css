@@ -1,3 +1,4 @@
+/* General Prediction Page Styles */
 .prediction {
   display: flex;
   height: 140vh;
@@ -5,6 +6,7 @@
   justify-content: center;
 }
 
+/* Input Container Styles */
 .input-container {
   display: flex;
   flex-direction: column;
@@ -17,31 +19,33 @@
   backdrop-filter: blur(300px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: black;
-  border-radius: 10px;
+  border-radius: 60px;
   padding: 20px;
 }
-.input-container h1{
+
+.input-container h1 {
   font-size: 36px;
   text-align: center;
 }
+
+/* Input Field Styles */
 .input-field {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 70%;
+  width: 90%;
   height: 50%;
 }
-.input-field label{
-  /* display: flex; */
+
+.input-field label {
   position: relative;
   left: 4%;
   top: -5%;
-
 }
 
 /* Input styles */
 .input-field input {
-  width: 80%;
+  width: 100%;
   height: 10%;
   background: transparent;
   border: 2px solid rgba(18, 17, 17, 0.2);
@@ -58,7 +62,7 @@
   text-align: center;
 }
 
-/* Button styles */
+/* Button Styles */
 .input-container button {
   width: 50%;
   height: 20%;
@@ -74,6 +78,7 @@
   margin-top: 20px;
 }
 
+/* Spinner Styles */
 .spinner {
   border: 4px solid #f3f3f3; /* Light grey */
   border-top: 4px solid #3498db; /* Blue */
@@ -90,5 +95,101 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .prediction {
+    height: auto;
+  }
+
+  .input-container {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .input-container h1 {
+    font-size: 28px;
+  }
+
+  .input-field {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  .input-field input {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .input-container button {
+    width: 70%;
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+/* Tablets (min-width: 768px and max-width: 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .prediction {
+    height: auto;
+  }
+
+  .input-container {
+    width: 80%;
+    height: auto;
+    padding: 18px;
+  }
+
+  .input-container h1 {
+    font-size: 32px;
+  }
+
+  .input-field {
+    width: 80%;
+    margin-top: 15px;
+  }
+
+  .input-field input {
+    width: 100%;
+    padding: 18px;
+    font-size: 15px;
+  }
+
+  .input-container button {
+    width: 60%;
+    font-size: 15px;
+    padding: 18px;
+  }
+}
+
+/* Desktop and Larger Devices (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .prediction {
+    height: 140vh;
+  }
+
+  .input-container {
+    width: 450px;
+    height: 600px;
+    padding: 20px;
+  }
+
+  .input-container h1 {
+    font-size: 36px;
+  }
+
+  .input-field {
+    width: 70%;
+    margin-top: 20px;
+  }
+
+  .input-container button {
+    width: 50%;
+    font-size: 16px;
+    padding: 20px;
   }
 }
